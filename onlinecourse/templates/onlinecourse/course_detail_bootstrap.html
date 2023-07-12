@@ -96,7 +96,7 @@
             <!-- Bootstrap Collapse example -->
             <div id="exam" class="collapse">
                 <!-- Iterate over questions -->
-                <form id="questionform" action="{% url 'onlinecourse:submit_exam' %}" method="post">
+                <form id="questionform" action="{% url 'onlinecourse:submit_exam' course.id %}" method="post">
                     {% csrf_token %}
                     {% for question in course.question_set.all %}
                         <div class="card mt-1">

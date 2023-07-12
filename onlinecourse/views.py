@@ -133,7 +133,7 @@ def submit(request, course_id):
         submission.choices.add(choice)
     
     # Redirect to the show_exam_result view with the submission id
-    return redirect('show_exam_result', submission_id=submission.id)
+    return redirect('onlinecourse:show_exam_result', submission_id=submission.id)
 
 
 # <HINT> A example method to collect the selected choices from the exam form from the request object

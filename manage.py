@@ -19,3 +19,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+"""
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py runserver 8080
+https://gabozignone-8080.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/onlinecourse
+"""
