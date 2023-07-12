@@ -103,14 +103,11 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
     
 class Question(models.Model):
-    
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     question_text = models.TextField(default='text')
-    grade = models.IntegerField(max_length=100, default=0)
-    
-    
-    # <HINT> A sample model method to calculate if learner get the score of the question
+    grade = models.IntegerField(default=0)
+
     def is_get_score(self, selected_ids):
         all_answers = self.choice_set.filter(is_correct=True).count()
         selected_correct = self.choice_set.filter(is_correct=True, id__in=selected_ids).count()
@@ -128,7 +125,7 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    is_correct = models.IntegerField(max_length=1, default=0)
+    is_correct = models.IntegerField(default=0)
     choice_text = models.TextField(max_length=255, default='text')
 
 # <HINT> The submission model
